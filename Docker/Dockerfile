@@ -45,6 +45,11 @@ RUN apt install -y libfontconfig1 libfreetype6 libssl-dev chrpath
 RUN pip3 install SocialKit --upgrade  -i https://pypi.douban.com/simple
 ADD spide.tar.gz /opt/
 
+ADD phantomjs-2.1.1-linux-x86_64.tar.bz2 /opt/
+RUN ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
+RUN ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+RUN ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
+
 
 
 WORKDIR /opt/spide
